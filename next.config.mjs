@@ -1,8 +1,9 @@
+import { DEBUG } from './config';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  basePath: '/keebgram',
-  assetPrefix: '/keebgram/'
+  basePath: DEBUG === 0 ? '/keebgram' : ''
 };
 
 export default nextConfig;
