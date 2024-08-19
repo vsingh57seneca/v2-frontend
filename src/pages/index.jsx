@@ -11,9 +11,9 @@ export default function Home() {
         <Image
           src={"/images/backgrounds/landing-background.jpg"}
           alt="Landing Background"
-          layout="fill"
-          objectFit="cover" 
-          priority 
+          width={1000}
+          height={1000}
+          className="object-cover"
         />
       </div>
       <div className="col-span-full md:col-span-1 p-8 md:p-[20%] flex items-center h-full justify-center">
