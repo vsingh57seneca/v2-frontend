@@ -1,4 +1,4 @@
-DEBUG = 0;
+const DEBUG = 0;
 
 const API_URL = ["https://victorsingh.ca/api/", "http://localhost:3001/"];
 
