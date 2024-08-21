@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Home",
+        "path": "/feed",
+        "icon": "MdHome"
+    },
+    {
+        "name": "Profile",
+        "path": "/profile",
+        "icon": "FaUser"
+    },
+    {
+        "name": "Create",
+        "path": "#",
+        "icon": "IoCreate"
+    }, 
+    {
+        "name": "Notifications",
+        "path": "/notifications",
+        "icon": "IoMdNotifications"
+    }
+]

@@ -12,13 +12,17 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex">
       <Toaster />
-      <div className={`flex-grow ${router.pathname === "/" ? 'min-h-screen' : 'h-[calc(100vh-80px)]'}`}>
-        <Component {...pageProps} />
-      </div>
-      <div className={`flex ${router.pathname === "/" && 'hidden'}`}> 
+      <div className={`flex fixed bottom-0 lg:static lg:bottom-auto ${router.pathname === "/" && "hidden"}`}>
         <Navbar />
+      </div>
+      <div
+        className={`flex-grow ${
+          router.pathname === "/" ? "min-h-screen" : "h-[calc(100vh-80px)]"
+        }`}
+      >
+        <Component {...pageProps} />
       </div>
     </div>
   );
