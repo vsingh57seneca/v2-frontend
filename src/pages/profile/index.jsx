@@ -43,7 +43,7 @@ const ProfilesIndex = () => {
   }
 
   return (
-    <div className="h-full">
+    <div className="h-full overflow-hidden overflow-y-auto">
       {user ? (
         <>
           <h1 className="font-bold text-2xl p-4">
@@ -130,7 +130,7 @@ const ProfilesIndex = () => {
             </div>
           </div>
 
-          <div className="flex justify-between items-center px-8">
+          <div className="flex justify-between items-center px-8 mb-4">
             <div className="flex gap-x-6">
               <button className="px-3 py-2 border rounded-lg bg-blue-500 text-white transition-all ease-in-out duration-300 hover:bg-blue-700">Save Changes</button>
               <button className="px-3 py-2 border rounded-lg bg-neutral-600 text-white transition-all ease-in-out duration-300 hover:bg-neutral-800" onClick={onCancel}>Cancel</button>
