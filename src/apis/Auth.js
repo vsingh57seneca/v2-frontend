@@ -14,8 +14,7 @@ export const login = async (formData) => {
         const response = await axios.post(`${api}`, data);
         return response.data;
     } catch (error) {
-        console.error(error);
-        return error;
+        throw error;
     }
 }
 
