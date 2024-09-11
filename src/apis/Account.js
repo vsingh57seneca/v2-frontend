@@ -1,6 +1,5 @@
 import axios from "axios";
 import { API_URL, DEBUG } from "../../config";
-import toast from "react-hot-toast";
 
 const api = `${API_URL[DEBUG]}accounts/`;
 
@@ -11,7 +10,12 @@ export const create = async (formData) => {
 
 export const find = async (token) => {
   try {
-    const response = await axios.get(`${api}${token}`);
+    const response = await axios.get(`${api}${token}`, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Pass token here
+      },
+    });
+    console.log(response);
     return response;
   } catch (error) {
     const response = error?.response;

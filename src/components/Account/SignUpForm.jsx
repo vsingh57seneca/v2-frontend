@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { create } from "@/apis/Account";
+import ResponsiveModal from "../General/ResponsiveModal";
 
 const SignUpForm = ({ setShowSignUpModal }) => {
   const [email, setEmail] = useState("");
@@ -38,7 +39,6 @@ const SignUpForm = ({ setShowSignUpModal }) => {
     }
 
     try {
-
       const data = {
         email: email,
         password: password,
@@ -46,7 +46,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
         last_name: lastName,
         country: country,
         dob: dob,
-        display_name: displayName
+        display_name: displayName,
       };
 
       const result = await create(data);
@@ -61,10 +61,8 @@ const SignUpForm = ({ setShowSignUpModal }) => {
   };
 
   return (
-    <div className="absolute bg-black/80 left-0 w-full h-full z-20">
-      <div className="flex md:items-center justify-center md:h-full">
-        <div className="bg-white w-full flex flex-col gap-y-6 p-4 md:max-w-[40%] rounded-lg">
-          <h1 className="text-2xl font-bold">Create Account</h1>
+    <ResponsiveModal>
+      <h1 className="text-2xl font-bold">Create Account</h1>
           <div className="p-4 flex flex-col gap-y-4">
             <label>
               <p className="font-semibold">Email</p>
@@ -182,9 +180,7 @@ const SignUpForm = ({ setShowSignUpModal }) => {
               Cancel
             </button>
           </div>
-        </div>
-      </div>
-    </div>
+    </ResponsiveModal>
   );
 };
 

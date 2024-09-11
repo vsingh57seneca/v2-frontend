@@ -22,7 +22,6 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
-
   return (
     <div className='w-full h-full'>
       {deviceWidth <= 1023 ? <Mobile /> : <Desktop />}

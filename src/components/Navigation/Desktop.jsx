@@ -5,15 +5,26 @@ import { FaUser } from "react-icons/fa";
 import { IoCreate } from "react-icons/io5";
 import { IoMdNotifications } from "react-icons/io";
 import { useRouter } from "next/router";
+import { useModalContext } from "@/contexts/ModalContext";
 
 const Desktop = () => {
   const router = useRouter();
+  const { showCreatePostModal, setShowCreatePostModal } = useModalContext();
 
   const iconMapping = {
     MdHome: MdHome,
     IoCreate: IoCreate,
     FaUser: FaUser,
     IoMdNotifications: IoMdNotifications,
+  };
+
+  const handleLinkClick = (path, isCreate) => {
+    if (isCreate) {
+      setShowCreatePostModal(!showCreatePostModal);
+    } else {
+      setShowCreatePostModal(false);
+      router.push(path);
+    }
   };
 
   return (
@@ -28,7 +39,7 @@ const Desktop = () => {
                 className={`flex justify-start items-center gap-x-2 cursor-pointer hover:bg-gray-400 px-3 py-2 rounded-full border-r-2 border-b-2 ${
                   router.pathname === link?.path && "bg-gray-300"
                 }`}
-                onClick={() => router.push(link?.path)}
+                onClick={() => handleLinkClick(link?.path, link?.icon === "IoCreate")}
               >
                 <IconComponent size={20} className="flex" />
                 <li className="flex justify-start font-semibold text-xl">
